@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Остались вопросы?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-dark: rgba(43, 43, 44, 1);
+            --color-black: rgba(15, 18, 23, 1);
+            --color-white: rgba(255, 255, 255, 1);
+            --color-green-primary: rgba(76, 197, 116, 1);
+            --color-green-button-light: rgba(97, 215, 119, 1);
+            --color-gray-bg: rgba(238, 239, 241, 1);
+            --color-gray-icon: rgba(170, 173, 176, 0.4);
+            --container-width: 1246px;
+            --section-padding: 80px 30px;
+            --padding-tablet: 60px 30px;
+            --padding-mobile: 60px 15px 60px 15px;
+            --padding-small: 15px;
+            --font-family-primary: 'Open Sans', sans-serif;
+            --font-size-h1: 40px;
+            --font-size-text: 16px;
+            --font-size-small: 14px;
+            --font-weight-semibold: 600;
+            --line-height: 1.4;
+            --border-radius-btn: 119px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        body {
+            font-family: var(--font-family-primary);
+            font-weight: 400;
+            background-color: var(--color-white);
+            line-height: var(--line-height);
+            hyphens: none;
+            word-break: keep-all;
+            overflow-wrap: normal;
+            overflow-x: hidden;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        /* ========== BLOCK7-GLAV: Форма расчета стоимости ========== */
+        .block7-glav {
+            background-color: var(--color-gray-bg);
+            padding: var(--section-padding);
+        }
+
+        .block7-glav__content {
+            display: flex;
+            gap: 31px;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .block7-glav__left {
+            max-width: 496px;
+        }
+
+        .block7-glav__right {
+            margin-top: 20px;
+            min-width: 500px;
+        }
+
+        .block7-glav__h1 {
+            font-family: var(--font-family-primary);
+            font-size: 40px;
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-dark);
+            line-height: var(--line-height);
+            margin-bottom: 30px;
+            width: 551px;
+        }
+
+        .block7-glav__text {
+            font-size: var(--font-size-text);
+            color: var(--color-dark);
+            line-height: 1.2;
+        }
+
+        .block7-glav__h1-mobile,
+        .block7-glav__text-mobile {
+            display: none;
+        }
+
+        .block7-glav__form {
+            margin-top: 30px;
+        }
+
+        .block7-glav__form-group {
+            margin-bottom: 0;
+        }
+
+        .block7-glav__form-label {
+            font-size: var(--font-size-text);
+            color: var(--color-black);
+            margin: 30px 0 10px;
+            display: block;
+        }
+
+        .block7-glav__form-input {
+            width: 100%;
+            height: 48px;
+            padding: 0 15px;
+            font-size: var(--font-size-text);
+            color: var(--color-black);
+            background-color: var(--color-white);
+            border: 1px solid var(--color-gray-icon);
+            border-radius: 0;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .block7-glav__form-textarea {
+            width: 100%;
+            height: 48px;
+            padding: var(--padding-small);
+            font-size: var(--font-size-text);
+            color: var(--color-black);
+            background-color: var(--color-white);
+            border: 1px solid var(--color-gray-icon);
+            border-radius: 0;
+            outline: none;
+            resize: none;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .block7-glav__form-label .required {
+            color: red;
+        }
+
+        .block7-glav__checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .block7-glav__checkbox {
+            width: 28px;
+            height: 12px;
+            background-color: rgba(76, 197, 116, 1);
+            border-radius: 30px;
+            position: relative;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .block7-glav__checkbox::after {
+            content: '';
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--color-white);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .block7-glav__checkbox:checked::after {
+            transform: translateX(-16px);
+        }
+
+        .block7-glav__checkbox-text {
+            font-size: 11px;
+            font-weight: 300;
+            color: var(--color-dark);
+            line-height: var(--line-height);
+        }
+
+        .block7-glav__checkbox-text a {
+            text-decoration: underline;
+            color: var(--color-dark);
+        }
+
+        .block7-glav__button {
+            width: 100%;
+            height: 51px;
+            background-color: var(--color-green-button-light);
+            border-radius: var(--border-radius-btn);
+            border: none;
+            font-size: var(--font-size-text);
+            font-weight: 600;
+            color: var(--color-white);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .block7-glav__button:hover {
+            background-color: var(--color-green-primary);
+        }
+
+        .block7-glav__img {
+            width: 100%;
+            height: 100%;
+            max-height: 700px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 1024px) {
+            .block7-glav {
+                padding: var(--padding-tablet);
+            }
+
+            .block7-glav__h1-mobile {
+                display: block;
+                font-size: var(--font-size-h1);
+                font-weight: var(--font-weight-semibold);
+                color: var(--color-dark);
+                margin-bottom: 25px;
+                line-height: 1.2;
+                width: 525px;
+            }
+
+            .block7-glav__text-mobile {
+                display: block;
+                font-size: var(--font-size-text);
+                color: var(--color-dark);
+                line-height: 1.2;
+                margin-bottom: 30px;
+                width: 100%;
+            }
+
+            .block7-glav__left .block7-glav__h1,
+            .block7-glav__left .block7-glav__text {
+                display: none;
+            }
+
+            .block7-glav__content {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .block7-glav__right {
+                order: 1;
+                margin-top: 0;
+                width: 100%;
+            }
+
+            .block7-glav__left {
+                order: 2;
+                max-width: none;
+                width: 100%;
+            }
+
+            .block7-glav__img {
+                width: 100%;
+                height: 716px;
+            }
+
+            .block7-glav__button {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .block7-glav {
+                padding: var(--padding-mobile);
+            }
+
+            .block7-glav__h1-mobile {
+                margin-bottom: 10px;
+                font-size: 30px;
+            }
+
+            .block7-glav__text-mobile {
+                font-size: var(--font-size-small);
+                margin-bottom: 0;
+            }
+
+            .block7-glav__form-label {
+                font-size: var(--font-size-small);
+            }
+
+            .block7-glav__button {
+                margin-top: 46px;
+                height: 54px;
+                text-align: center;
+            }
+
+            .block7-glav__right {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- BLOCK7-GLAV: Форма расчета стоимости -->
+    <section class="block7-glav">
+        <div class="section-container" style="max-width: var(--container-width); margin: 0 auto;">
+            <h1 class="block7-glav__h1-mobile">Остались вопросы?</h1>
+            <p class="block7-glav__text-mobile">Предложим выгодное сотрудничество и проконсультируем по кризисным ситуациям. Будем рады знакомству с Вами.</p>
+
+            <div class="block7-glav__content">
+                <div class="block7-glav__left">
+                    <h1 class="block7-glav__h1">Остались вопросы?</h1>
+                    <p class="block7-glav__text">Предложим выгодное сотрудничество и <br>проконсультируем по кризисным ситуациям. Будем рады знакомству с Вами.</p>
+
+                    <!-- Форма расчета стоимости -->
+                    <form class="block7-glav__form">
+                        <div class="block7-glav__form-group">
+                            <label class="block7-glav__form-label">Ф.И.О.</label>
+                            <input type="text" class="block7-glav__form-input">
+                        </div>
+
+                        <div class="block7-glav__form-group">
+                            <label class="block7-glav__form-label">Телефон <span class="required">*</span></label>
+                            <input type="tel" class="block7-glav__form-input">
+                        </div>
+
+                        <div class="block7-glav__form-group">
+                            <label class="block7-glav__form-label">Комментарий</label>
+                            <textarea class="block7-glav__form-textarea"></textarea>
+                        </div>
+
+                        <div class="block7-glav__checkbox-group">
+                            <input type="checkbox" class="block7-glav__checkbox" id="privacy-checkbox" checked>
+                            <label for="privacy-checkbox" class="block7-glav__checkbox-text">
+                                Я соглашаюсь с политикой конфиденциальности
+                            </label>
+                        </div>
+                    </form>
+
+                    <button class="block7-glav__button">Получить консультацию</button>
+                </div>
+                <div class="block7-glav__right">
+                    <img src="/images/about/block7-glav/Autor.webp" alt="Автор" class="block7-glav__img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (function notifyEmbedHeight() {
+            var resizeTimer;
+            function send() {
+                if (window.parent === window) return;
+                window.parent.postMessage({
+                    type: 'block7-glav-height',
+                    height: document.documentElement.scrollHeight
+                }, '*');
+            }
+            window.addEventListener('load', send);
+            window.addEventListener('resize', function () {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(send, 120);
+            });
+        })();
+    </script>
+</body>
+</html>
