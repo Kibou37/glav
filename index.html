@@ -599,7 +599,7 @@
 
             .block1-hero-inner {
                 min-height: auto;
-                padding: 32px 40px 100px;
+                padding: 0 32px 100px 32px;
                 flex-direction: column;
                 align-items: flex-start;
                 border-radius: 0;
@@ -618,6 +618,10 @@
                 font-size: 28px;
             }
 
+            .block1-hero-text {
+                margin-bottom: 15px;
+            }
+
             .block1-tab-btn:first-child,
             .block1-tab-btn:last-child {
                 border-radius: 0;
@@ -625,6 +629,7 @@
 
             .block1-hero-dots {
                 margin-top: 28px;
+                margin-top: 15px;
             }
 
             .block1-tabs-card {
@@ -642,6 +647,29 @@
 
             .block1-form-row {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .block1-hero-inner {
+                align-items: center;
+                gap: 0px;
+            }
+
+            .block1-hero-media {
+                display: flex;
+                order: -1;
+                max-width: 230px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .block1-hero-image {
+                max-width: 240px;
+            }
+
+            .block1-hero-content {
+                width: 100%;
             }
         }
 
@@ -1322,6 +1350,51 @@
         .fade-in-up.card-delay-4 { transition-delay: 0.8s; }
         .fade-in-up.card-delay-5 { transition-delay: 1.0s; }
         .fade-in-up.card-delay-6 { transition-delay: 1.2s; }
+        .fade-in-up.card-delay-7 { transition-delay: 1.4s; }
+        .fade-in-up.card-delay-8 { transition-delay: 1.6s; }
+
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-in-left.delay-1 { transition-delay: 0.1s; }
+        .fade-in-left.delay-2 { transition-delay: 0.2s; }
+        .fade-in-left.delay-3 { transition-delay: 0.3s; }
+        .fade-in-left.delay-4 { transition-delay: 0.4s; }
+        .fade-in-left.delay-5 { transition-delay: 0.5s; }
+        .fade-in-left.delay-6 { transition-delay: 0.6s; }
+        .fade-in-left.delay-7 { transition-delay: 0.7s; }
+        .fade-in-left.delay-8 { transition-delay: 0.8s; }
+
+        .fade-in-left.card-delay-1 { transition-delay: 0.2s; }
+        .fade-in-left.card-delay-2 { transition-delay: 0.4s; }
+        .fade-in-left.card-delay-3 { transition-delay: 0.6s; }
+        .fade-in-left.card-delay-4 { transition-delay: 0.8s; }
+        .fade-in-left.card-delay-5 { transition-delay: 1.0s; }
+        .fade-in-left.card-delay-6 { transition-delay: 1.2s; }
+        .fade-in-left.card-delay-7 { transition-delay: 1.4s; }
+        .fade-in-left.card-delay-8 { transition-delay: 1.6s; }
+
+        .fade-in-right.delay-4 { transition-delay: 0.4s; }
+        .fade-in-right.delay-5 { transition-delay: 0.5s; }
 
         /* ========== БАЗОВЫЕ СТИЛИ ========== */
         
@@ -1772,10 +1845,34 @@
             }
         }
 
+        @media (max-width: 600px) {
+            .block6-glav__cards {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .block6-glav__carousel-row {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .block8-glav__name,
+            .block11-glav__card-title {
+                font-size: var(--font-size-small);
+                font-weight: 700;
+                line-height: 1.3;
+            }
+
+            .block11-glav__card--active .block11-glav__card-title {
+                font-size: var(--font-size-small);
+            }
+        }
+
         @media (max-width: 500px) {
             .block6-glav__cards {
-                width: calc(100% - 41px);
-                margin-left: 41px;
+                width: 100%;
+                margin-left: 0;
                 padding: 0;
                 overflow: visible;
                 max-height: none;
@@ -3666,7 +3763,7 @@
             flex-grow: 1;
             font-size: var(--font-size-h2);
             margin: 0 263px;
-            font-weight: 700;
+            font-weight: 400;
             line-height: 100%;
             color: #555658;
             transition: color 0.3s;
@@ -4578,12 +4675,12 @@
     <section class="block2-glav">
         <div class="container-wide">
             <header class="block2-glav-header">
-                <h2 class="block2-glav-title">Доставка грузов из Китая</h2>
-                <p class="block2-glav-subtitle">Услуги международной логистики</p>
+                <h2 class="block2-glav-title fade-in-up delay-1">Доставка грузов из Китая</h2>
+                <p class="block2-glav-subtitle fade-in-up delay-2">Услуги международной логистики</p>
             </header>
 
             <div class="block2-glav-grid block2-glav-grid--main">
-                <article class="block2-glav-card block2-glav-card--media">
+                <article class="block2-glav-card block2-glav-card--media fade-in-left card-delay-1">
                     <div class="block2-glav-card-body">
                         <h3 class="block2-glav-card-title">Автодоставка из&nbsp;Китая</h3>
                         <p class="block2-glav-card-text">Быстрая доставка через Казахстан с бесплатным хранением на нашем складе. Гарантируем быстрое преодоление таможенных постов.</p>
@@ -4597,7 +4694,7 @@
                     </div>
                 </article>
 
-                <article class="block2-glav-card block2-glav-card--media">
+                <article class="block2-glav-card block2-glav-card--media fade-in-left card-delay-2">
                     <div class="block2-glav-card-body">
                         <h3 class="block2-glav-card-title">Авиадоставка из&nbsp;Китая</h3>
                         <p class="block2-glav-card-text">Безопасная доставка грузов в короткие сроки. Актуально для дорогой техники, образцов и вещей повышенной хрупкости.</p>
@@ -4611,7 +4708,7 @@
                     </div>
                 </article>
 
-                <article class="block2-glav-card block2-glav-card--media">
+                <article class="block2-glav-card block2-glav-card--media fade-in-left card-delay-3">
                     <div class="block2-glav-card-body">
                         <h3 class="block2-glav-card-title">Ж/Д доставка из&nbsp;Китая</h3>
                         <p class="block2-glav-card-text">Доставим груз по железной дороге с минимальной стоимостью логистики. Можем&nbsp;растаможить груз и доставить со станции до вашей двери при доставке до ж/д станции Локоть.</p>
@@ -4625,7 +4722,7 @@
                     </div>
                 </article>
 
-                <article class="block2-glav-card block2-glav-card--media">
+                <article class="block2-glav-card block2-glav-card--media fade-in-left card-delay-4">
                     <div class="block2-glav-card-body">
                         <h3 class="block2-glav-card-title">Доставка из&nbsp;Китая морем</h3>
                         <p class="block2-glav-card-text">Дешевая доставка из китайских провинций до порта вашего города. Выгодно для городов Дальнего востока.</p>
@@ -4640,10 +4737,10 @@
                 </article>
             </div>
 
-            <h3 class="block2-glav-section-title">Дополнительные услуги</h3>
+            <h3 class="block2-glav-section-title fade-in-up delay-1">Дополнительные услуги</h3>
 
             <div class="block2-glav-grid block2-glav-grid--extra">
-                <article class="block2-glav-card block2-glav-card--plain">
+                <article class="block2-glav-card block2-glav-card--plain fade-in-left card-delay-1">
                     <div class="block2-glav-card-body">
                         <h3 class="block2-glav-card-title">Таможенное оформление</h3>
                         <p class="block2-glav-card-text">Являемся таможенными представителями. Проведём оформление без переплаты пошлин. Быстрая подготовка декларации без ошибок.</p>
@@ -4654,7 +4751,7 @@
                     </div>
                 </article>
 
-                <article class="block2-glav-card block2-glav-card--plain">
+                <article class="block2-glav-card block2-glav-card--plain fade-in-left card-delay-2">
                     <div class="block2-glav-card-body">
                         <h3 class="block2-glav-card-title">Хранение на&nbsp;СВХ</h3>
                         <p class="block2-glav-card-text">Сохраним ваш груз в охраняемом утепленном складе временного хранения. Поможем с оформлением на таможенном складе. Срок хранения до 3-х лет.</p>
@@ -4665,7 +4762,7 @@
                     </div>
                 </article>
 
-                <article class="block2-glav-card block2-glav-card--plain">
+                <article class="block2-glav-card block2-glav-card--plain fade-in-left card-delay-3">
                     <div class="block2-glav-card-body">
                         <h3 class="block2-glav-card-title">Поиск поставщиков и&nbsp;производителей</h3>
                         <p class="block2-glav-card-text">Найдем необходимый товар в Китае, проведём переговоры и предоставим выгодные для вашего бизнеса КП.</p>
@@ -4676,7 +4773,7 @@
                     </div>
                 </article>
 
-                <article class="block2-glav-card block2-glav-card--plain block2-glav-card--question">
+                <article class="block2-glav-card block2-glav-card--plain block2-glav-card--question fade-in-left card-delay-4">
                     <div class="block2-glav-card-body">
                         <h3 class="block2-glav-card-title">Остались вопросы?</h3>
                         <p class="block2-glav-card-text">Рассчитаем доставку всеми видами транспорта и&nbsp;подберём необходимый комплекс услуг под задачи и&nbsp;тип груза.</p>
@@ -5960,11 +6057,11 @@
 <!-- Блок 4: Форма заявки -->
     <section class="block4-glav">
         <div class="container-wide">
-            <header class="block4-glav-header">
+            <header class="block4-glav-header fade-in-up delay-1">
                 <h2 class="block2-glav-title">Бесплатное бизнес-решение от&nbsp;нашего менеджера ВЭД</h2>
             </header>
 
-            <div class="block4-glav-steps-line" aria-hidden="true">
+            <div class="block4-glav-steps-line fade-in-up delay-2" aria-hidden="true">
                 <div class="block4-glav-step-circle">1</div>
                 <hr class="block4-glav-step-connector">
                 <div class="block4-glav-step-circle">2</div>
@@ -5972,7 +6069,7 @@
                 <div class="block4-glav-step-circle">3</div>
             </div>
 
-            <div class="block4-glav-steps-text">
+            <div class="block4-glav-steps-text fade-in-up delay-3">
                 <div class="block4-glav-step-item">
                     <div class="block4-glav-step-name">Заявка</div>
                     <p class="block4-glav-step-desc">Опишите кратко задачу.</p>
@@ -5991,23 +6088,23 @@
                 <div class="block4-glav-main">
                     <form class="block4-glav-form" id="block4-glav-form" action="#" method="post">
                         <div class="block4-glav-fields">
-                            <div class="block4-glav-field">
+                            <div class="block4-glav-field fade-in-left delay-4">
                                 <label class="block4-glav-label" for="block4-glav-name">Ф.И.О.</label>
                                 <input class="block4-glav-input" type="text" id="block4-glav-name" name="name" maxlength="255">
                             </div>
 
-                            <div class="block4-glav-field">
+                            <div class="block4-glav-field fade-in-left delay-5">
                                 <label class="block4-glav-label" for="block4-glav-phone">Телефон <span class="block4-glav-label-required">*</span></label>
                                 <input class="block4-glav-input" type="tel" id="block4-glav-phone" name="phone" maxlength="255" required>
                             </div>
 
-                            <div class="block4-glav-field">
+                            <div class="block4-glav-field fade-in-left delay-6">
                                 <label class="block4-glav-label" for="block4-glav-message">Комментарий</label>
                                 <textarea class="block4-glav-input block4-glav-input--textarea" id="block4-glav-message" name="message" maxlength="2000"></textarea>
                             </div>
                         </div>
 
-                        <div class="block4-glav-agreement">
+                        <div class="block4-glav-agreement fade-in-left delay-7">
                             <div class="block4-glav-toggle" id="block4-glav-toggle" role="switch" aria-checked="true" tabindex="0">
                                 <div class="block4-glav-toggle-slider"></div>
                             </div>
@@ -6018,11 +6115,11 @@
                             </p>
                         </div>
 
-                        <button type="submit" class="block4-glav-submit">Получить расчёт</button>
+                        <button type="submit" class="block4-glav-submit fade-in-left delay-8">Получить расчёт</button>
                     </form>
                 </div>
 
-                <div class="block4-glav-media">
+                <div class="block4-glav-media fade-in-right delay-5">
                     <img src="image/block4/block4-glav-img.webp" alt="Расчёт доставки грузов">
                 </div>
             </div>
@@ -6811,6 +6908,26 @@
             ];
 
             let active = 0;
+            const AUTOPLAY_DELAY = 5000;
+            let autoplayTimer = null;
+
+            function startAutoplay() {
+                stopAutoplay();
+                autoplayTimer = setInterval(function () {
+                    setSlide(active + 1);
+                }, AUTOPLAY_DELAY);
+            }
+
+            function stopAutoplay() {
+                if (autoplayTimer) {
+                    clearInterval(autoplayTimer);
+                    autoplayTimer = null;
+                }
+            }
+
+            function resetAutoplay() {
+                startAutoplay();
+            }
 
             function setSlide(index) {
                 active = (index + slides.length) % slides.length;
@@ -6838,20 +6955,28 @@
             if (prev) {
                 prev.addEventListener('click', function () {
                     setSlide(active - 1);
+                    resetAutoplay();
                 });
             }
 
             if (next) {
                 next.addEventListener('click', function () {
                     setSlide(active + 1);
+                    resetAutoplay();
                 });
             }
 
             dots.forEach((dot, idx) => {
                 dot.addEventListener('click', function () {
                     setSlide(idx);
+                    resetAutoplay();
                 });
             });
+
+            hero.addEventListener('mouseenter', stopAutoplay);
+            hero.addEventListener('mouseleave', startAutoplay);
+
+            startAutoplay();
         }());
 
         (function () {
@@ -7048,7 +7173,7 @@
             };
 
             const activateAnimation = () => {
-                document.querySelectorAll('.fade-in-up').forEach((element) => {
+                document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach((element) => {
                     if (isElementInViewportWithOffset(element, 150) && !element.classList.contains('visible')) {
                         element.classList.add('visible');
                     }
